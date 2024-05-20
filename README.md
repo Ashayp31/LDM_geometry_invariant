@@ -9,7 +9,7 @@
 This codebase contains code for performing generative modelling of 3D medical imaging with diffusion models in addition to super-resolution tasks. It supports the use of DDPMs in addition to LDMs for higher dimensional data.
 This work is the official implementation of [1] applied to 3D CT data. 
 This codebase contains the code to perform unsupervised out-of-distribution detection with diffusion models.
-It supports the use of DDPMs as well as Latent Diffusion Models (LDM) for dealing with higher dimensional 2D or 3D data.
+It supports the use of DDPMs as well as Latent Diffusion Models (LDM) for dealing with higher dimensional data.
 It is based on work published in [1] and [2].
 
 [1] [Resolution and Field of View Invariant Generative Modelling with Latent Diffusion Models]([https://arxiv.org/abs/2211.07740](https://openreview.net/pdf?id=VHfh2J8MQ6))
