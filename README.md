@@ -2,7 +2,10 @@
 <p align="center">
 </p>
 
-![generative_diagram drawio](https://github.com/Ashayp31/LDM_geometry_invariant/assets/62710884/393946f2-b3d5-43fe-853b-a28482f850ad)
+
+<p align="center">
+  <img width="800" height="300" src="https://github.com/Ashayp31/LDM_geometry_invariant/assets/62710884/393946f2-b3d5-43fe-853b-a28482f850ad">
+</p>
 
 
 ## Intro
