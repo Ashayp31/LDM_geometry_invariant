@@ -31,7 +31,7 @@ bash create_docker_image.sh
 ## Run with LDM
 
 ### Train VQVAE
-
+```bash
 python3 run_vqvae.py run \
     --training_subjects=${path_to_training_subjects} \
     --validation_subjects=${path_to_validation_subjects}  \
@@ -81,6 +81,7 @@ python3 run_vqvae.py run \
     --apply_coordConv=True \
     --input_has_coordConv=False \
     --cropping_type='without_padding' \
+```
 
 The VQVAE training code is DistributedDataParallel (DDP) compatible. For example to train with 4 GPUs run with: mpirun -np 4 --oversubscribe --allow-run-as-root python3 run_vqvae.py run \
     
