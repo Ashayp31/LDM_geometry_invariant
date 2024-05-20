@@ -145,6 +145,10 @@ python3 sample_ddpm.py \
 For generating particular samples of a given field of view at a given resolution, a file of same size of the output image needs to be created with values along each dimension between 0-1 that correspond to the field-of-view.
 These files are the ones stored as spatial_encoding_path and can also be used as the validation_subjects path to generate the starting dimension of the outputted generated image.
 
+<p align="center">
+  <img width="800" height="300" src="https://github.com/Ashayp31/LDM_geometry_invariant/assets/62710884/0819a0d8-1325-4845-8729-98875cc77f33">
+</p>
+
 
 ### Run Super-resolution
 ```bash
