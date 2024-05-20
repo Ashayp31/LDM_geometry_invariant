@@ -26,4 +26,5 @@ CUDA_LAUNCH_BLOCKING=1 python3 /nfs/home/apatel/ddpm-main-xatt/super_res_ddpm.py
   --dynamic_latent_pad=True \
   --spatial_conditioning=True \
   --conditioning_type=concat \
-  --sample_postfix=_wb_lower_res
+  --sample_postfix=_wb_lower_res \
+  --num_steps_denoise=200
