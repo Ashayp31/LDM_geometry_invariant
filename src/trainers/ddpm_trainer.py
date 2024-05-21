@@ -361,15 +361,5 @@ class DDPMTrainer(BaseTrainer):
                     cmap="gray",
                 )
 
-            #
-            # slice_ratios = [0.25, 0.5, 0.75]
-            # for i in range(num_samples):
-            #     slices = [int(ratio * samples[i].shape[3]) for ratio in slice_ratios]
-            #     for j in range(len(slices)):
-            #         ax[i][j].imshow(
-            #             np.transpose(samples[i, :, :, slices[j], :].cpu().numpy(), (1, 2, 0)),
-            #             cmap="gray",
-            #         )
-
         self.logger_val.add_figure(tag="samples", figure=fig, global_step=self.global_step)
 

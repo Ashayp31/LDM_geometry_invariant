@@ -196,13 +196,13 @@ def parse_args():
     )
     parser.add_argument(
         "--num_repetitions",
-        default=2,
+        default=5,
         type=int,
         help="Number of times to repeat cycle of adding noise and denoising",
     )
     parser.add_argument(
         "--num_steps_denoise",
-        default=25,
+        default=100,
         type=int,
         help="Number of steps to take during denoising",
     )
