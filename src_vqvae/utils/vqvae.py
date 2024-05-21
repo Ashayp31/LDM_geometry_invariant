@@ -359,7 +359,6 @@ def get_transformations(
 
         if normalize:
             transform += [ScaleIntensityd(keys=[key], minv=0.0, maxv=1.0)]
-            #transform += [ScaleIntensityRangePercentilesd(keys=[key], lower=1, upper=99, b_min=0.0, b_max=1.0)]
 
         if standardize:
             transform += [NormalizeIntensityd(keys=[key])]
@@ -431,7 +430,7 @@ def get_transformations(
             else:
                 augmentations += [Rand3DElasticd(
                     keys=[key],
-                    prob=0.2, #0.8,
+                    prob=0.8,
                     sigma_range=[1.0, 2.0],
                     magnitude_range=[2.0, 5.0],
                     rotate_range=[0, 0, 0.0],
