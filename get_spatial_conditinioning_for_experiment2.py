@@ -137,7 +137,10 @@ def main():
     keys = ["image", "spatial_latent"]
     keys_image = ["image", "spatial_latent", "resolution"]
 
-    ct_directory = "/nfs/home/apatel/Data/PET_Challenge/processed/CT_1.6_1.6_2.5_clipped_registered_CoordConv/"
+    data_location = ""
+    output_data_location = ""
+
+    ct_directory = data_location
 
     all_cts = os.listdir(ct_directory)
     all_cts.reverse()
@@ -157,7 +160,7 @@ def main():
         print(okay)
 
 
-# (was 8 before)
+
         for x in range(1):
             resize_transform_1 = (Resize_img(keys=keys_image, x=[272,272,288],new_res=[1.6,1.6,2.5])) # nothing needs to be done with this one
             resize_transform_2 = (Resize_img(keys=keys_image, x=[200,200,216],new_res=[2.2,2.2,3.4]))
@@ -259,9 +262,9 @@ def main():
                          [0, 0, 0, 1]]
             ct_img_1 = np.array(ct_img_1)
 
-            np.save("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_high_res.npy", spatial_encoding_1)
+            np.save(output_data_location + "/spatial_encoding_wb_high_res.npy", spatial_encoding_1)
             ct_nii_img = nib.Nifti1Image(ct_img_1, affine=new_qform)
-            nib.save(ct_nii_img, "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/high_res_wb/high_res_wb.nii.gz")
+            nib.save(ct_nii_img, output_data_location + "/high_res_wb.nii.gz")
 
 
 
@@ -280,9 +283,9 @@ def main():
                          [0, 0, 0, 1]]
             ct_img_2 = np.array(ct_img_2)
 
-            np.save("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_med_res.npy", spatial_encoding_2)
+            np.save(output_data_location + "/spatial_encoding_wb_med_res.npy", spatial_encoding_2)
             ct_nii_img = nib.Nifti1Image(ct_img_2, affine=new_qform)
-            nib.save(ct_nii_img, "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/med_res_wb/med_res_wb.nii.gz")
+            nib.save(ct_nii_img, output_data_location + "/med_res_wb.nii.gz")
 
 
             ############################### SAMPLE 3 ###########################
@@ -300,9 +303,9 @@ def main():
                          [0, 0, 0, 1]]
             ct_img_3 = np.array(ct_img_3)
 
-            np.save("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_low_res.npy", spatial_encoding_3)
+            np.save(output_data_location + "/spatial_encoding_wb_low_res.npy", spatial_encoding_3)
             ct_nii_img = nib.Nifti1Image(ct_img_3, affine=new_qform)
-            nib.save(ct_nii_img, "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/low_res_wb/low_res_wb.nii.gz")
+            nib.save(ct_nii_img, output_data_location + "/low_res_wb.nii.gz")
 
             ############################### SAMPLE 4 ###########################
 
@@ -319,9 +322,9 @@ def main():
                          [0, 0, 0, 1]]
             ct_img_4 = np.array(ct_img_4)
 
-            np.save("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_ub_med_res.npy", spatial_encoding_4)
+            np.save(output_data_location + "/spatial_encoding_ub_med_res.npy", spatial_encoding_4)
             ct_nii_img = nib.Nifti1Image(ct_img_4, affine=new_qform)
-            nib.save(ct_nii_img, "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/med_res_ub/med_res_ub.nii.gz")
+            nib.save(ct_nii_img, output_data_location + "/med_res_ub.nii.gz")
 
             ############################### SAMPLE 5 ###########################
 
@@ -338,20 +341,10 @@ def main():
                          [0, 0, 0, 1]]
             ct_img_5 = np.array(ct_img_5)
 
-            np.save("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_lb_med_res.npy", spatial_encoding_5)
+            np.save(output_data_location + "/spatial_encoding_lb_med_res.npy", spatial_encoding_5)
             ct_nii_img = nib.Nifti1Image(ct_img_5, affine=new_qform)
-            nib.save(ct_nii_img, "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/med_res_leftb/med_res_leftb.nii.gz")
+            nib.save(ct_nii_img, output_data_location + "/med_res_leftb.nii.gz")
 
-
-    data = []
-    data.append(["high_res_wb.nii.gz", "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_high_res.npy"])
-    data.append(["med_res_wb.nii.gz", "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_med_res.npy"])
-    data.append(["low_res_wb.nii.gz", "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_wb_low_res.npy"])
-    data.append(["med_res_ub.nii.gz", "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_ub_med_res.npy"])
-    data.append(["med_res_leftb.nii.gz", "/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_res/spatial_encoding_lb_med_res.npy"])
-
-    subjects_df = pd.DataFrame(data, columns=["subject","spatial"])
-    subjects_df.to_csv("/nfs/home/apatel/Data/PET_Challenge/processed/CT_Generative_Experiment2/spatial_locations.csv")
 
 if __name__ == "__main__":
     main()

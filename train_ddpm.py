@@ -195,27 +195,6 @@ def parse_args():
 # to run using DDP, run torchrun --nproc_per_node=1 --nnodes=1 --node_rank=0  train_ddpm.py --args
 if __name__ == "__main__":
     args = parse_args()
-    # args.training_ids = ["/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/20",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/20",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/20",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/21",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/22",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/23",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/24",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/25",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/26",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/27",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/28",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/29",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/30",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/31",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/32",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/33",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/34",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/35",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/36",
-    #                     "/nfs/home/apatel/Data/PET_Challenge/processed/CT_clipped_varying_resolution_and_fov/37"]
-    args.training_ids = ["/nfs/home/apatel/Data/combined_datasets/PET_FDG/training",
-                          "/nfs/home/apatel/Data/PET_Challenge_niftis/PET_SUV_15"]
+
     trainer = DDPMTrainer(args)
     trainer.train(args)

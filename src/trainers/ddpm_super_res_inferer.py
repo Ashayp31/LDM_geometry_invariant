@@ -73,14 +73,12 @@ class DDPMInfererSuperRes(BaseTrainer):
                 if repeat_std == 0:
                     images = batch["image"].to(self.device)
                     sample = images[0,0]
-                    # print(images.shape)
-                    # samples = self.vqvae_model.decode_stage_2_outputs(images)
-                    # print(samples.shape)
+
                     new_qform = [[1.6, 0, 0, 0],
                                  [0, 1.6, 0, 0],
                                  [0, 0, 2.5, 0],
                                  [0, 0, 0, 1]]
-                    # sample = samples[0, 0]
+
                     sample = sample.cpu().numpy()
                     sample_nii = nib.Nifti1Image(sample, affine=new_qform)
                     nib.save(sample_nii,
@@ -177,8 +175,8 @@ class DDPMInfererSuperRes(BaseTrainer):
                             model_output, step, images
                         )
 
-                    # if reps == 0 and repeat_std > 0:
-                    #     continue
+                    if reps == 0 and repeat_std > 0:
+                        continue
 
                     if self.dynamic_latent_pad:
                         latent_samples = F.pad(
