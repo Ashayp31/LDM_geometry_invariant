@@ -312,14 +312,13 @@ def get_subjects(
 
         if crop_paths:
             try:
-                crop_for_subject = [0,1.0,0,1.0,0,1.0]
-                #crop_for_subject = [
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "x0"].values[0],
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "x1"].values[0],
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "y0"].values[0],
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "y1"].values[0],
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "z0"].values[0],
-                #    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "z1"].values[0]]
+                crop_for_subject = [
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "x0"].values[0],
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "x1"].values[0],
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "y0"].values[0],
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "y1"].values[0],
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "z0"].values[0],
+                    crop_paths_file.loc[crop_paths_file["subject"] == subject_name, "z1"].values[0]]
             except IndexError:
                 print("Cannot find Cropping Info for ", file)
                 mia_subjects += 1
